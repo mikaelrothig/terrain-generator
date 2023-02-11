@@ -3,7 +3,6 @@ using UnityEngine;
 public class HexGridGenerator : MonoBehaviour
 {
     public GameObject Hexagon;
-    public GameObject HexagonSharp;
     public GameObject HexParentHolder;
     public int heightMultiplier = 2;
     public float Scale = 15;
@@ -88,13 +87,13 @@ public class HexGridGenerator : MonoBehaviour
         }
 
         //Instantiate  Waterlevel
-        var water = Instantiate(HexagonSharp, new Vector3(0, WaterLevel - 1.75f, 0), Quaternion.Euler(new Vector3(90, 0, 0)));
+        var water = Instantiate(Hexagon, new Vector3(0, WaterLevel - 1.75f, 0), Quaternion.Euler(new Vector3(90, 0, 0)));
         float waterScale = mapSize * 1.75f;
         water.transform.localScale = new Vector3(waterScale, waterScale, 1.65f);
         water.GetComponent<MeshRenderer>().material = Water;
         water.transform.parent = HexParentHolder.transform;
 
-        var frost = Instantiate(HexagonSharp, new Vector3(0, WaterLevel, 0), Quaternion.Euler(new Vector3(90, 0, 0)));
+        var frost = Instantiate(Hexagon, new Vector3(0, WaterLevel, 0), Quaternion.Euler(new Vector3(90, 0, 0)));
         frost.transform.localScale = new Vector3(waterScale, waterScale, .1f);
         frost.GetComponent<MeshRenderer>().material = Frost;
         frost.transform.parent = HexParentHolder.transform;

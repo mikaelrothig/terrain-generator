@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 262.0923, g: 324.7036, b: 429.77197, a: 1}
+  m_IndirectSpecularColor: {r: 262.1853, g: 324.85815, b: 429.9668, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -482,8 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5f5d08fd376469c921517027463a8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hexagon: {fileID: 919132149155446097, guid: 6d248a03516c6ae489399fa981fbffe0, type: 3}
-  HexagonSharp: {fileID: 919132149155446097, guid: 7da14b747a4bff942b0f4173f690e2ba, type: 3}
+  Hexagon: {fileID: 919132149155446097, guid: 7da14b747a4bff942b0f4173f690e2ba, type: 3}
   HexParentHolder: {fileID: 1452903665}
   heightMultiplier: 2
   Scale: 15
