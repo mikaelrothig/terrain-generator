@@ -38,9 +38,9 @@
   <ItemGroup>
      <Compile Include="Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\FunctionPointerInvokeTransform.cs" />
      <Compile Include="Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\CecilExtensions.cs" />
+     <Compile Include="Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\AssemblyResolver.cs" />
      <Compile Include="Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\ILPostProcessing.cs" />
      <Compile Include="Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\BurstILPostProcessor.cs" />
-     <Compile Include="Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\AssemblyResolver.cs" />
      <None Include="Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.CodeGen.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2022.1.13f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -298,16 +298,16 @@
         <HintPath>C:\Program Files\Unity\Hub\Editor\2022.1.13f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-        <HintPath>C:\Users\mrrot\Desktop\TerrainGenerator\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
+        <HintPath>C:\Users\mrrot\Documents\GitHub\TerrainGenerator\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil">
-        <HintPath>C:\Users\mrrot\Desktop\TerrainGenerator\Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
+        <HintPath>C:\Users\mrrot\Documents\GitHub\TerrainGenerator\Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
-        <HintPath>C:\Users\mrrot\Desktop\TerrainGenerator\Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+        <HintPath>C:\Users\mrrot\Documents\GitHub\TerrainGenerator\Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Pdb">
-        <HintPath>C:\Users\mrrot\Desktop\TerrainGenerator\Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+        <HintPath>C:\Users\mrrot\Documents\GitHub\TerrainGenerator\Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2022.1.13f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\mscorlib.dll</HintPath>
