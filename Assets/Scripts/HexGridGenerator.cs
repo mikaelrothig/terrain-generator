@@ -87,14 +87,16 @@ public class HexGridGenerator : MonoBehaviour
         }
 
         //Instantiate  Waterlevel
-        var water = Instantiate(Hexagon, new Vector3(0, WaterLevel - 1.75f, 0), Quaternion.Euler(new Vector3(90, 0, 0)));
+        var frostThickness = 0.1f;
         float waterScale = mapSize * 1.75f;
-        water.transform.localScale = new Vector3(waterScale, waterScale, 1.65f);
+
+        var water = Instantiate(Hexagon, new Vector3(0, (WaterLevel / 2) - frostThickness / 2, 0), Quaternion.Euler(new Vector3(90, 0, 0)));
+        water.transform.localScale = new Vector3(waterScale, waterScale, (WaterLevel - frostThickness) / 2f);
         water.GetComponent<MeshRenderer>().material = Water;
         water.transform.parent = HexParentHolder.transform;
 
         var frost = Instantiate(Hexagon, new Vector3(0, WaterLevel, 0), Quaternion.Euler(new Vector3(90, 0, 0)));
-        frost.transform.localScale = new Vector3(waterScale, waterScale, .1f);
+        frost.transform.localScale = new Vector3(waterScale, waterScale, frostThickness);
         frost.GetComponent<MeshRenderer>().material = Frost;
         frost.transform.parent = HexParentHolder.transform;
     }
@@ -111,14 +113,13 @@ public class HexGridGenerator : MonoBehaviour
         float roundedHeight = Mathf.PerlinNoise(xCord, zCord);
 
         //spawn Hex
-
         var Hex = Instantiate(Hexagon, new Vector3(newX, 0, newZ), Quaternion.Euler(new Vector3(90, 30, Hexagon.transform.rotation.z)));
         Hex.name = x + "," + z;
 
         roundedHeight *= heightMultiplier;
 
-        //set the height to double because it goes both up and down
-        Hex.transform.localScale = new Vector3(Hex.transform.localScale.x, Hex.transform.localScale.y, roundedHeight * 2);
+        Hex.transform.localScale = new Vector3(Hex.transform.localScale.x, Hex.transform.localScale.y, roundedHeight);
+        Hex.transform.position = new Vector3(Hex.transform.position.x, Hex.transform.position.y + roundedHeight, Hex.transform.position.z);
 
         Hex.transform.parent = HexParentHolder.transform;
         SetHexType(Hex, roundedHeight);
@@ -133,7 +134,7 @@ public class HexGridGenerator : MonoBehaviour
             Destroy(Hex);
 
             //set the height to water height
-            //Hex.transform.localScale = new Vector3(Hex.transform.localScale.x, Hex.transform.localScale.y, WaterLevel * 2);
+            //Hex.transform.localScale = new Vector3(Hex.transform.localScale.x, Hex.transform.localScale.y, WaterLevel);
             //Hex.transform.localScale = new Vector3(Hex.transform.localScale.x, Hex.transform.localScale.y, Hex.transform.localScale.z);
 
             //set the position back to zero
@@ -160,7 +161,7 @@ public class HexGridGenerator : MonoBehaviour
 
                 if (Random.Range(0f, 5f) > 3f && HexHeight > WaterLevel)
                 {
-                    Vector3 pos = new Vector3(Hex.transform.position.x, Hex.transform.localScale.z + 1, Hex.transform.position.z);
+                    Vector3 pos = new Vector3(Hex.transform.position.x, (Hex.transform.localScale.z * 2) + 1f, Hex.transform.position.z);
                     GameObject tree;
                     /*GameObject tree = Instantiate(AcaciaTree, pos, Quaternion.Euler(new Vector3(0,Random.Range(0f, 360f),0)));*/
                     if (Random.Range(1, 3) == 1)
