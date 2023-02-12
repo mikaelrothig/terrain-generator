@@ -53,6 +53,12 @@ public class HexGridGenerator : MonoBehaviour
                 Destroy(tree);
             }
 
+            GameObject[] rocks = GameObject.FindGameObjectsWithTag("Stone");
+            foreach (GameObject rock in rocks)
+            {
+                Destroy(rock);
+            }
+
             GenerateMesh();
             UpdateMesh = false;
         }
@@ -157,13 +163,12 @@ public class HexGridGenerator : MonoBehaviour
             {
                 //grass
                 Hex.GetComponent<MeshRenderer>().material = Grass;
-                //Hex.tag = ("Grass");
 
                 if (Random.Range(0f, 5f) > 3f && HexHeight > WaterLevel)
                 {
                     Vector3 pos = new Vector3(Hex.transform.position.x, (Hex.transform.localScale.z * 2) + 1f, Hex.transform.position.z);
                     GameObject tree;
-                    /*GameObject tree = Instantiate(AcaciaTree, pos, Quaternion.Euler(new Vector3(0,Random.Range(0f, 360f),0)));*/
+
                     if (Random.Range(1, 3) == 1)
                         tree = Instantiate(trees[0], pos, Quaternion.Euler(new Vector3(-90, Random.Range(0f, 360f), 0)));
                     else if (Random.Range(1, 3) == 2)
@@ -179,20 +184,22 @@ public class HexGridGenerator : MonoBehaviour
         if (HexHeight > GrassUpToThisHeight)
         {
             //rock
-            Hex.GetComponent<MeshRenderer>().material = Stone;
-            //Hex.tag = ("Stone");
+            // Hex.GetComponent<MeshRenderer>().material = Stone;
 
-            /*if (Random.Range(0f, 5f) > 3f && HexHeight > WaterLevel)
-                {
-                    if (Random.Range(1, 3) == 1)
-                        rock = Instantiate(rocks[0], new Vector3(pos.x, pos.y-0.5f, pos.z), Quaternion.Euler(new Vector3(0, Random.Range(0f, 360f), 0)));
-                    else if (Random.Range(1, 3) == 2)
-                        rock = Instantiate(rocks[1], new Vector3(pos.x, pos.y-0.5f, pos.z), Quaternion.Euler(new Vector3(0, Random.Range(0f, 360f), 0)));
-                    else
-                        rock = Instantiate(rocks[2], new Vector3(pos.x, pos.y-0.5f, pos.z), Quaternion.Euler(new Vector3(0, Random.Range(0f, 360f), 0)));
+            // if (Random.Range(0f, 5f) > 3f && HexHeight > WaterLevel)
+            // {
+            //     Vector3 pos = new Vector3(Hex.transform.position.x, (Hex.transform.localScale.z * 2) + 1f, Hex.transform.position.z);
+            //     GameObject rock;
 
-                    //rock.tag = "Rock";
-                }*/
+            //     if (Random.Range(1, 3) == 1)
+            //         rock = Instantiate(rocks[0], new Vector3(pos.x, pos.y - 0.5f, pos.z), Quaternion.Euler(new Vector3(0, Random.Range(0f, 360f), 0)));
+            //     else if (Random.Range(1, 3) == 2)
+            //         rock = Instantiate(rocks[1], new Vector3(pos.x, pos.y - 0.5f, pos.z), Quaternion.Euler(new Vector3(0, Random.Range(0f, 360f), 0)));
+            //     else
+            //         rock = Instantiate(rocks[2], new Vector3(pos.x, pos.y - 0.5f, pos.z), Quaternion.Euler(new Vector3(0, Random.Range(0f, 360f), 0)));
+
+            //     rock.tag = "Stone";
+            // }
         }
     }
 }

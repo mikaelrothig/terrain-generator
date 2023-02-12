@@ -33,13 +33,13 @@ Material:
     MotionVector: User
   disabledShaderPasses:
   - DecalProjectorForwardEmissive
-  - MOTIONVECTORS
+  - RayTracingPrepass
   - DistortionVectors
   - DecalMeshForwardEmissive
   - TransparentDepthPrepass
   - TransparentDepthPostpass
   - TransparentBackface
-  - RayTracingPrepass
+  - MOTIONVECTORS
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
